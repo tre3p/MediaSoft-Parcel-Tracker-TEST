@@ -2,9 +2,9 @@
 
 ## API
 
-> POST: /api/v1.0/register 
+### POST: /api/v1.0/register 
 
-### Creates a new post shipment.
+> Creates a new post shipment.
 (JSON body example)
 ```
 {
@@ -23,8 +23,8 @@
 
 
 
-> GET /api/v1.0/{id}
-### Returns information about shipment
+### GET /api/v1.0/{id}
+> Returns information about shipment
 ```
 {
     "id": 6,
@@ -48,8 +48,8 @@
 
 
 
-> PATCH /api/v1.0/{id}/intermediate
-### Adding intermediate post station to movement history(when arrived) and changes status to "Arrived to intermediate post office"
+### PATCH /api/v1.0/{id}/intermediate
+> Adding intermediate post station to movement history(when arrived) and changes status to "Arrived to intermediate post office"
 (JSON body example)
 ```
 {
@@ -62,14 +62,14 @@
 
 
 
-> PATCH /api/v1.0/{id}/leave
-### Change parcel status to "Leaved from intermediate post office"
+### PATCH /api/v1.0/{id}/leave
+> Change parcel status to "Leaved from intermediate post office"
 
 
 
 
-> PATCH /api/v1.0/{id}/received
-### Change parcel status to "Received by recipient"
+### PATCH /api/v1.0/{id}/received
+> Change parcel status to "Received by recipient"
 
 
 
