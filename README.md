@@ -21,6 +21,8 @@
 }
 ```
 
+
+
 > GET /api/v1.0/{id}
 ### Returns information about shipment
 ```
@@ -43,6 +45,9 @@
 }
 ```
 
+
+
+
 > PATCH /api/v1.0/{id}/intermediate
 ### Adding intermediate post station to movement history(when arrived) and changes status to "Arrived to intermediate post office"
 (JSON body example)
@@ -54,11 +59,20 @@
 }
 ```
 
+
+
+
 > PATCH /api/v1.0/{id}/leave
 ### Change parcel status to "Leaved from intermediate post office"
 
+
+
+
 > PATCH /api/v1.0/{id}/received
 ### Change parcel status to "Received by recipient"
+
+
+
 
 ### Response body example with added intermediate post office
 
