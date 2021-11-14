@@ -2,3 +2,5 @@
 *.log
 # Build dir
 build
+.DS_STORE
+.gradle
