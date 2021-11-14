@@ -1,11 +1,13 @@
 package com.example.mediasoftparceltracker.dto;
 
 import com.example.mediasoftparceltracker.model.Parcel;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
+@AllArgsConstructor
 public class ParcelDto {
     private Parcel.ParcelType parcelType;
     private Integer recipientIndex;

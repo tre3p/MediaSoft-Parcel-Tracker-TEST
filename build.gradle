@@ -2,6 +2,12 @@ plugins {
     id 'org.springframework.boot' version '2.5.6'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
+    id 'application'
+    id 'jacoco'
+}
+
+application {
+    mainClass = 'com.example.mediasoftparceltracker.MediaSoftParcelTrackerApplication'
 }
 
 group = 'com.example'
@@ -26,6 +32,12 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.20'
     testCompileOnly 'org.projectlombok:lombok:1.18.20'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
+}
+
+jacocoTestReport {
+    reports {
+        xml.required = true
+    }
 }
 
 test {

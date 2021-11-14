@@ -6,33 +6,33 @@ import com.example.mediasoftparceltracker.dto.PostOfficeDto;
 import com.example.mediasoftparceltracker.model.Parcel;
 import com.example.mediasoftparceltracker.model.PostOffice;
 import javassist.NotFoundException;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@AllArgsConstructor
+@Component
 public class ParcelServiceImpl implements ParcelService {
     private ParcelRepository parcelRepository;
 
-    public ParcelServiceImpl(ParcelRepository parcelRepository) {
-        this.parcelRepository = parcelRepository;
-    }
-
     @Override
     public void createShipment(ParcelDto parcelDto) {
-        Parcel parcel = new Parcel();
+        PostOffice postOffice = new PostOffice(
+                parcelDto.getPostOffice().getIndex(),
+                parcelDto.getPostOffice().getName(),
+                parcelDto.getPostOffice().getAddress()
+                );
 
-        parcel.setParcelType(parcelDto.getParcelType());
-        parcel.setParcelStatus(Parcel.ParcelStatus.SHIPMENT_REGISTERED);
-        parcel.setRecipientAddress(parcelDto.getRecipientAddress());
-        parcel.setRecipientIndex(parcelDto.getRecipientIndex());
-        parcel.setSenderIndex(parcelDto.getSenderIndex());
-        parcel.setRecipientName(parcelDto.getRecipientName());
-
-        PostOffice postOffice = new PostOffice();
-        postOffice.setName(parcelDto.getPostOffice().getName());
-        postOffice.setIndex(parcelDto.getPostOffice().getIndex());
-        postOffice.setAddress(parcelDto.getPostOffice().getAddress());
-
-        parcel.setMovementHistory(List.of(postOffice));
+        Parcel parcel = new Parcel(
+                parcelDto.getParcelType(),
+                parcelDto.getRecipientIndex(),
+                parcelDto.getSenderIndex(),
+                parcelDto.getRecipientAddress(),
+                parcelDto.getRecipientName(),
+                Parcel.ParcelStatus.SHIPMENT_REGISTERED,
+                List.of(postOffice)
+                );
 
         this.parcelRepository.save(parcel);
     }
@@ -42,7 +42,7 @@ public class ParcelServiceImpl implements ParcelService {
         Parcel parcel = parcelRepository.findParcelById(id);
         if (!(parcel == null)) {
             parcel.setParcelStatus(Parcel.ParcelStatus.ARRIVED_AT_INTERMEDIATE_POST_OFFICE);
-            PostOffice postOffice = new PostOffice();
+            PostOffice postOffice = new PostOffice();  //todo
             postOffice.setIndex(postOfficeDto.getIndex());
             postOffice.setName(postOfficeDto.getName());
             postOffice.setAddress(postOfficeDto.getAddress());
@@ -55,7 +55,7 @@ public class ParcelServiceImpl implements ParcelService {
     }
 
     @Override
-    public Parcel findParcelById(Integer id) throws NotFoundException {
+    public Parcel findParcelById(Integer id) {
         Parcel parcel = parcelRepository.findParcelById(id);
         if (!(parcel == null)) {
             return parcel;

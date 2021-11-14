@@ -8,8 +8,4 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class ParcelConfig {
-    @Bean
-    public ParcelService parcelService(ParcelRepository parcelRepository) {
-        return new ParcelServiceImpl(parcelRepository);
-    }
 }

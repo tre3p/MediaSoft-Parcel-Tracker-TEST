@@ -1,0 +1,12 @@
+{
+  "parcelType": "LETTER",
+  "recipientIndex": 11201,
+  "senderIndex": 22304,
+  "recipientAddress": "4865 Redbud Drive",
+  "recipientName": "Regina Wright",
+  "postOffice": {
+    "index": 22304,
+    "name": "Alexandria VA",
+    "address": "N.Pegram St. 22"
+  }
+}
