@@ -42,11 +42,11 @@ public class ParcelServiceImpl implements ParcelService {
         Parcel parcel = parcelRepository.findParcelById(id);
         if (!(parcel == null)) {
             parcel.setParcelStatus(Parcel.ParcelStatus.ARRIVED_AT_INTERMEDIATE_POST_OFFICE);
-            PostOffice postOffice = new PostOffice();  //todo
-            postOffice.setIndex(postOfficeDto.getIndex());
-            postOffice.setName(postOfficeDto.getName());
-            postOffice.setAddress(postOfficeDto.getAddress());
-
+            PostOffice postOffice = new PostOffice(
+                    postOfficeDto.getIndex(),
+                    postOfficeDto.getName(),
+                    postOfficeDto.getAddress()
+            );
             parcel.getMovementHistory().add(postOffice);
             parcelRepository.save(parcel);
             return;
