@@ -5,6 +5,8 @@
 
 ## API
 
+### Also API available at build/openapi.json and can be simply added to swagger.
+
 ### POST: /api/v1.0/register 
 
 > Creates a new post shipment.
