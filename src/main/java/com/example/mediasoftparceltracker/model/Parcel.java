@@ -12,7 +12,7 @@ import java.util.List;
 public class Parcel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     private ParcelType parcelType;
     private Integer recipientIndex;
     private Integer senderIndex;

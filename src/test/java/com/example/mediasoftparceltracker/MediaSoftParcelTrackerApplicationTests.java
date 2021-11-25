@@ -91,7 +91,7 @@ class MediaSoftParcelTrackerApplicationTests {
 
         assertThat(patchResponse.getStatus()).isEqualTo(200);
         assertThat(getResponse.getStatus()).isEqualTo(200);
-        assertThat(patchResponse.getContentAsString()).contains("Parcel has been successfully leaved from post office.");
+        assertThat(patchResponse.getContentAsString()).contains("Parcel has been successfully left from post office.");
         assertThat(getResponse.getContentAsString()).contains("LEAVED_FROM_INTERMEDIATE_POST_OFFICE");
     }
 

@@ -7,8 +7,8 @@ import javassist.NotFoundException;
 
 public interface ParcelService {
     void createShipment(ParcelDto parcelDto);
-    void registerIntermediatePostOffice(Integer id, PostOfficeDto postOfficeDto) throws NotFoundException;
-    Parcel findParcelById(Integer id) throws NotFoundException;
-    void leaveParcelFromPostOffice(Integer id);
-    void registerParcelReceivedByRecipient(Integer id);
+    void registerIntermediatePostOffice(Long id, PostOfficeDto postOfficeDto) throws NotFoundException;
+    Parcel findParcelById(Long id) throws NotFoundException;
+    void leaveParcelFromPostOffice(Long id);
+    void registerParcelReceivedByRecipient(Long id);
 }
