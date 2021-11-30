@@ -3,5 +3,6 @@
 # Build dir
 build
 .DS_STORE
+pg_data
 .gradle
 .idea
