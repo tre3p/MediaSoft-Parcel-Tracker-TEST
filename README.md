@@ -3,6 +3,11 @@
 <a href="https://codeclimate.com/github/k0damaDEV/MediaSoft-Parcel-Tracker-TEST/maintainability"><img src="https://api.codeclimate.com/v1/badges/0f2d6d0661311cc97961/maintainability" /></a>
 <a href="https://codeclimate.com/github/k0damaDEV/MediaSoft-Parcel-Tracker-TEST/test_coverage"><img src="https://api.codeclimate.com/v1/badges/0f2d6d0661311cc97961/test_coverage" /></a>
 
+## Run with docker compose:
+```
+docker-compose up
+```
+
 ## API
 
 ### Also API available at build/openapi.json and can be simply added to swagger.
